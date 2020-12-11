@@ -17,11 +17,9 @@ public class App {
 
         Scanner in = new Scanner(System.in);
         System.out.println("Введите: Да/Нет");
-        String str1 = in.nextLine();
+        String line = in.nextLine();
 
-        int i = str1.length();
-        int a = 2;
-        if (a >= i) {
+        if (line.equals("Да")) {
 
             System.out.println("Продавец: Какие вас интересуют?");
         } else {
