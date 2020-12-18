@@ -1,12 +1,7 @@
 package by.shop;
 
-import com.sun.deploy.security.SelectableSecurityManager;
-
 import java.util.Scanner;
 
-/**
- * Hello world!
- */
 public class App {
     public static void main(String[] args) {
 
@@ -19,28 +14,30 @@ public class App {
 
         Scanner in = new Scanner(System.in);
         System.out.println("Введите: Да/Нет");
+        int attempt = 4;
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < attempt; i++) {
+
             String line = in.nextLine();
 
             if (line.equals("Да")) {
                 System.out.println("Продавец: Какие вас интересуют?");
+                System.exit(0);
             } else if (line.equals("Нет")) {
                 System.out.println("Клиент: Извините, хорошего дня!");
                 seller.speak("Продавец: Спасибо, и Вам хорошего дня!");
-
-            } else if (true) {
-
-                System.out.println("Ответ не корректен!");
-                System.out.println("Попробуйте еще раз");
-
-                if (i > 2) {
-                    System.out.println("Ничего личного, но ты сегодня не в адеквате, чувак!");
+                System.exit(0);
+            } else {
+                if (i < 3) {
+                    System.out.println("Не корректный ответ. Попробуйте еще раз");
+                    continue;
                 }
+                System.out.println("Давай досвидания");
             }
         }
     }
 }
+
 
 
 
