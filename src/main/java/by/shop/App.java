@@ -7,6 +7,7 @@ public class App {
 
         Human client = new Client();
         Human seller = new Seller();
+        Human admin = new Admin();
 
         client.speak("Клиент: Добрый день!");
         seller.speak("Продавец: Добрый день!");
@@ -21,30 +22,19 @@ public class App {
             String line = in.nextLine();
 
             if (line.equals("Да")) {
-                System.out.println("Продавец: Какие вас интересуют?");
+                seller.speak("Продавец: Какие вас интересуют?");
                 System.exit(0);
             } else if (line.equals("Нет")) {
-                System.out.println("Клиент: Извините, хорошего дня!");
+                client.speak("Клиент: Извините, хорошего дня!");
                 seller.speak("Продавец: Спасибо, и Вам хорошего дня!");
                 System.exit(0);
             } else {
                 if (i < 3) {
-                    System.out.println("Не корректный ответ. Попробуйте еще раз");
+                    admin.speak("Не корректный ответ. Попробуйте еще раз");
                     continue;
                 }
-                System.out.println("Давай досвидания");
+                admin.speak("Давай досвидания");
             }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
