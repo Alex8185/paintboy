@@ -14,7 +14,7 @@ public class App {
         client.speak("Могу ли я приобрести часы?");
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Введите: Да/Нет");
+        admin.speak("Введите: Да/Нет");
         int attempt = 4;
 
         for (int i = 0; i < attempt; i++) {
