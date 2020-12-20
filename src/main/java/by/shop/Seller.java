@@ -5,6 +5,5 @@ public class Seller extends Human {
     @Override
     public void speak(String say) {
         System.out.println("Продавец: " + say);
-
     }
 }
