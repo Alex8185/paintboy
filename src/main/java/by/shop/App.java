@@ -9,9 +9,9 @@ public class App {
         Human seller = new Seller();
         Human admin = new Admin();
 
-        client.speak("Клиент: Добрый день!");
+        client.speak("Добрый день!");
         seller.speak("Продавец: Добрый день!");
-        client.speak("Клиент: Могу ли я приобрести часы?");
+        client.speak("Могу ли я приобрести часы?");
 
         Scanner in = new Scanner(System.in);
         System.out.println("Введите: Да/Нет");
