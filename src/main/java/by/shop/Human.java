@@ -2,8 +2,6 @@ package by.shop;
 
 public abstract class Human {
 
-    public void speak(String say) {
-        System.out.println(say);
+    public abstract void speak(String say);
 
-    }
 }
