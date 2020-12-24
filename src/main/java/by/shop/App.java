@@ -6,30 +6,31 @@ public class App {
     public static void main(String[] args) {
 
         Human client = new Client();
-        Human seller = new Seller();
         Human admin = new Admin();
+
+        Store store = new Store(new Seller());
+        Human seller = store.getSeller();
+        String[] items = store.getItems();
 
         client.speak("Добрый день!");
         seller.speak("Добрый день!");
         client.speak("Могу ли я приобрести часы?");
 
-        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         admin.speak("Введите: Да/Нет");
         int attempt = 4;
         for (int i = 0; i < attempt; i++) {
-            String line = in.nextLine();
+            String line = scanner.nextLine();
 
-            if (line.equals("Да")) {
+            if (line.equalsIgnoreCase("Да")) {
                 seller.speak("Какие вас интересуют?");
-                String[] products = new String[]{"НАСТЕННЫЕ", "НАРУЧНЫЕ", "НАСТОЛЬНЫЕ"};
-                for (int a = 0; a < products.length; a++) {
-                    System.out.println((a + 1) + ". " + products[a]);
+                for (int a = 0; a < items.length; a++) {
+                    System.out.println((a + 1) + ". " + items[a]);
                 }
-                Scanner scanner = new Scanner(System.in);
-                System.out.println("Пожалуйста, сделайте выбор");
+                admin.speak("Пожалуйста, сделайте выбор");
                 String productNumber = scanner.nextLine();
                 int opNumber = Integer.parseInt(productNumber);
-                seller.speak("Это отличный выбор");
+                seller.speak(items[opNumber-1] + " Это отличный выбор");
                 System.exit(0);
 
             } else if (line.equals("Нет")) {
