@@ -16,14 +16,22 @@ public class App {
         Scanner in = new Scanner(System.in);
         admin.speak("Введите: Да/Нет");
         int attempt = 4;
-
         for (int i = 0; i < attempt; i++) {
-
             String line = in.nextLine();
 
             if (line.equals("Да")) {
                 seller.speak("Какие вас интересуют?");
+                String[] products = new String[]{"НАСТЕННЫЕ", "НАРУЧНЫЕ", "НАСТОЛЬНЫЕ"};
+                for (int a = 0; a < products.length; a++) {
+                    System.out.println((a + 1) + ". " + products[a]);
+                }
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Пожалуйста, сделайте выбор");
+                String productNumber = scanner.nextLine();
+                int opNumber = Integer.parseInt(productNumber);
+                seller.speak("Это отличный выбор");
                 System.exit(0);
+
             } else if (line.equals("Нет")) {
                 client.speak("Извините, хорошего дня!");
                 seller.speak("Спасибо, и Вам хорошего дня!");
