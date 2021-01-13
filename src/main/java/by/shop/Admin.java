@@ -3,7 +3,7 @@ package by.shop;
 public class Admin extends Human {
 
     @Override
-    public void speak(String say) {
-        System.out.println("Система: " + say);
+    public void speak(String phrase) {
+        System.out.println("Система: " + phrase);
     }
 }
