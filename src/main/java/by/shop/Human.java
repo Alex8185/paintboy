@@ -2,6 +2,6 @@ package by.shop;
 
 public abstract class Human {
 
-    public abstract void speak(String say);
+    public abstract void speak(String phrase);
 
 }
