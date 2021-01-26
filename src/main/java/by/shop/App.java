@@ -21,13 +21,15 @@ public class App {
 
             if (line.equals("Да")) {
                 seller.speak("Какие вас интересуют?");
-
-
-                admin.speak("Пожалуйста, сделайте выбор");
-                String line1 = in.nextLine();
-
-
-                seller.speak(" - отличный выбор");
+                String[] products = new String[]{"НАСТЕННЫЕ", "НАРУЧНЫЕ", "НАСТОЛЬНЫЕ"};
+                for (int a = 0; a < products.length; a++) {
+                    System.out.println((a + 1) + ". " + products[a]);
+                }
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Пожалуйста, сделайте выбор");
+                String productNumber = scanner.nextLine();
+                int opNumber = Integer.parseInt(productNumber);
+                seller.speak("Это отличный выбор");
                 System.exit(0);
 
             } else if (line.equals("Нет")) {
